@@ -52,11 +52,11 @@ def swapWallBrick(outputNamePrefix, studHeight):
 
         #get size of the object we're replacing
         boundingBox = cmds.exactWorldBoundingBox(part)
-        dimensions = [bbox[3] - bbox[0], bbox[4] - bbox[1], bbox[5] - bbox[2]] #in the format X, Y, Z
+        dimensions = [boundingBox[3] - boundingBox[0], boundingBox[4] - boundingBox[1], boundingBox[5] - boundingBox[2]] #in the format X, Y, Z
 
         #this is where the spoopyness happens, if the z coordinate be borked, look here!
-        dimensions[2] = dimensions[2] - studHeight #make the new box shorter in the Z axis by studHeight
-        dest_coords[2] = dest_coords[2] - (studHeight/2) #the center points of the proxy box and the destination box are no longer the same, so we move it down by half of the stud height
+        dimensions[1] = dimensions[1] - studHeight #make the new box shorter in the Z axis by studHeight
+        dest_coords[1] = dest_coords[1] - (studHeight/2) #the center points of the proxy box and the destination box are no longer the same, so we move it down by half of the stud height
         #most of the spoopiness should be done by here
 
         #make new cube with the specified dimensions, and move and rotate into position
