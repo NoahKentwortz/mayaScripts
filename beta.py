@@ -9,7 +9,7 @@ ascii_encoded_and_cleaned = [x[1:] for x in ascii_encoded] #removes the first ch
 
 
 def swapParts(templatePart, partsList, groupName, outputNamePrefix):
-    #parse the partsList string to extract a list of part names to replace
+    parse the partsList string to extract a list of part names to replace
     semicolon_removed = partsList.replace(";", "") #remove semicolons from string
     groupless_obj_list = semicolon_removed.split(' ') #convert to list, delimited by a space
     grouped_obj_list = [obj + groupName + '|' for obj in groupless_obj_list] #append the groupname to each part
